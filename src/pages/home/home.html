@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="showMoreOptions($event)">
+              <ion-icon name="more"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-list>
+ 
+    <ion-item *ngFor="let item of allWords" [hidden]="!item.highFrequency" (click)="itemSelected(item)">
+      
+      <h2>{{item.title}}</h2>
+      <h3>{{item.subTitle}}</h3>
+      <p>{{item.descriptionText}}</p>
+ 
+    </ion-item>
+ 
+  </ion-list>
+</ion-content>
